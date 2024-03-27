@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,30 +7,31 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <img src="chave1/img1.png" alt="Puzzle Image" class="puzzleImage">
+    <img src="imgs/img1.png" alt="Puzzle Image" class="puzzleImage">
     <br>
     <button class="emoji-btn">📥</button>
     <br>
-    <button class="emoji-btn" onclick="myFunction()" >❓</button>
+    <button class="emoji-btn" onclick="download('kirk.rar')" >❓</button>
+    <img src="imgs/R1.jpg" alt="Puzzle Image" class="puzzleImage" id="hideImage" style="display: none;">
 
     <script>
         document.querySelector('button').addEventListener('click', () => {
             ['1.rar', '2.rar', '3.rar', '4.rar', '5.rar', '6.rar', '7.rar', '8.rar', '9.rar'].forEach(file => {
                 var anchor=document.createElement('a');
-                anchor.setAttribute('href',`chave1/${file}`);
+                anchor.setAttribute('href',`puzzles/${file}`);
                 anchor.setAttribute('download','');
                 document.body.appendChild(anchor);
                 anchor.click();
                 anchor.parentNode.removeChild(anchor);
             })
         })
-
-        function myFunction() {
-            let text;
-            let senha = prompt("Kirk");
-            if(senha == "[SENHA 1]"){
-                document.getElementById('hideImage').style.display = 'block'
-            }
+        function download(url) {
+          const a = document.createElement('a')
+          a.href = url
+          a.download = url.split('/').pop()
+          document.body.appendChild(a)
+          a.click()
+          document.body.removeChild(a)
         }
     </script>
 </body>
