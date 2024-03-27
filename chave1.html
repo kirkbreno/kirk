@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chave</title>
-<link rel="stylesheet" href="./styles.css" />
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <img src="img1.png" alt="Puzzle Image" class="puzzleImage">
+    <img src="chave1/img1.png" alt="Puzzle Image" class="puzzleImage">
     <br>
     <button class="emoji-btn">📥</button>
     <br>
@@ -17,7 +17,7 @@
         document.querySelector('button').addEventListener('click', () => {
             ['1.rar', '2.rar', '3.rar', '4.rar', '5.rar', '6.rar', '7.rar', '8.rar', '9.rar'].forEach(file => {
                 var anchor=document.createElement('a');
-                anchor.setAttribute('href',`${file}`);
+                anchor.setAttribute('href',`chave1/${file}`);
                 anchor.setAttribute('download','');
                 document.body.appendChild(anchor);
                 anchor.click();
