@@ -7,22 +7,12 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <button class="emoji-btn">📥</button>
+    <p><a href="https://drive.google.com/file/d/1E_jW2Vrn2L48j0BrMcfNUD4Tr2SjakSb/view?usp=sharing">📥</a></p>
     <br>
     <button class="emoji-btn" onclick="download('chave5/kirk.rar')" >❓</button>
     <img src="imgs/R1.jpg" alt="Puzzle Image" class="puzzleImage" id="hideImage" style="display: none;">
 
     <script>
-        document.querySelector('button').addEventListener('click', () => {
-            ['1.20.1.rar'].forEach(file => {
-                var anchor=document.createElement('a');
-                anchor.setAttribute('href',`chave5/${file}`);
-                anchor.setAttribute('download','');
-                document.body.appendChild(anchor);
-                anchor.click();
-                anchor.parentNode.removeChild(anchor);
-            })
-        })
         function download(url) {
           const a = document.createElement('a')
           a.href = url
